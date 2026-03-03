@@ -535,36 +535,6 @@ Additional Notes: ${formData.get("notes") || "None"}
             </div>
           </div>
 
-          {/* PREMIUM SUBJECT CARDS */}
-          <div>
-            <label className="font-bold block mb-4">Subjects</label>
-            <div className="grid md:grid-cols-2 gap-4">
-              {subjects.map((subject) => (
-                <label key={subject} className="cursor-pointer">
-                  <input type="checkbox" name="subjects" value={subject} className="peer hidden"/>
-                  <div className="p-4 rounded-xl border-2 border-gray-300
-                                  peer-checked:border-[#C6A34E]
-                                  peer-checked:bg-[#0B1C2D]
-                                  peer-checked:text-white
-                                  hover:border-[#C6A34E]
-                                  transition">
-                    {subject}
-                  </div>
-                </label>
-              ))}
-            </div>
-          </div>
-
-          <button
-            type="submit"
-            className="w-full bg-[#0B1C2D] text-white py-3 rounded font-semibold hover:bg-black transition"
-          >
-            Submit Quotation Request
-          </button>
-
-        </form>
-      </section>
-
       <footer className="bg-black py-10 text-center text-sm">
         © {new Date().getFullYear()} ShoLuc Education
       </footer>
