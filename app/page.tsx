@@ -114,65 +114,137 @@ Notes: ${formData.get("notes") || "None"}
         </a>
       </section>
 
-      {/* FOUNDER */}
-      <section className="bg-white text-[#0B1C2D] py-24 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div className="flex justify-center">
-            <img
-              src="/founder.jpg"
-              alt="Founder"
-              className="w-72 h-72 object-cover rounded-full shadow-2xl border-4 border-[#C6A34E]"
-            />
-          </div>
-          <div>
-            <h2 className="text-4xl font-extrabold mb-6">
-              Meet the Founder
-            </h2>
-            <p className="text-xl font-semibold mb-4 text-[#C6A34E]">
-              Lucky Shongwe — Educator & Academic Strategist
-            </p>
-            <p className="text-lg leading-relaxed mb-4">
-              ShoLuc Education was founded on structured excellence,
-              measurable improvement, and academic mastery.
-            </p>
-            <p className="text-lg leading-relaxed">
-              This is not remedial tutoring — it is strategic academic elevation.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* FOUNDER SECTION - PREMIUM AUTHORITY */}
+<section className="bg-white text-[#0B1C2D] py-28 px-6">
+  <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
-      {/* TUTORS */}
-      <section className="bg-[#F8F6F1] text-[#0B1C2D] py-24 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-extrabold mb-12">
-            Our Tutors
-          </h2>
-          <p className="text-lg max-w-4xl mx-auto">
-            Carefully selected, academically strong, examination-focused,
-            and professionally trained within the ShoLuc framework.
-          </p>
-        </div>
-      </section>
+    <div className="flex justify-center">
+      <img
+        src="/founder.jpg"
+        alt="Lucky Shongwe - Founder"
+        className="w-80 h-80 object-cover rounded-full shadow-2xl border-4 border-[#C6A34E]"
+      />
+    </div>
 
-      {/* SESSION TYPES */}
-      <section className="py-20 px-6 text-center">
-        <h2 className="text-4xl font-bold mb-12">Academic Session Types</h2>
-        <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-          <div className="border border-gray-600 p-6 rounded-xl">
-            One-on-One Online
-          </div>
-          <div className="border border-gray-600 p-6 rounded-xl">
-            Small Group Online
-          </div>
-          <div className="border border-gray-600 p-6 rounded-xl">
-            In-Person One-on-One
-          </div>
-          <div className="border border-gray-600 p-6 rounded-xl">
-            Small Group In-Person
-          </div>
-        </div>
-      </section>
+    <div>
+      <h2 className="text-5xl font-extrabold mb-6 leading-tight">
+        Academic Excellence<br/>Built on Structure & Results
+      </h2>
+
+      <p className="text-2xl font-semibold text-[#C6A34E] mb-6">
+        Founded by Lucky Shongwe — Educator, Strategist, Results Specialist
+      </p>
+
+      <p className="text-lg leading-relaxed mb-6">
+        ShoLuc Education was established to redefine tutoring from casual support
+        to strategic academic advancement. With extensive classroom experience
+        and curriculum expertise, Lucky Shongwe has developed a measurable,
+        examination-focused framework aligned with CAPS and IEB standards.
+      </p>
+
+      <p className="text-lg leading-relaxed font-semibold">
+        This is not homework assistance.  
+        This is structured academic elevation.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+      {/* TUTORS SECTION - GOLD ACCENT SELLING CARDS */}
+<section className="bg-[#F8F6F1] text-[#0B1C2D] py-28 px-6">
+  <div className="max-w-6xl mx-auto text-center">
+
+    <h2 className="text-5xl font-extrabold mb-16">
+      Our Tutors
+    </h2>
+
+    <div className="grid md:grid-cols-3 gap-12">
+
+      <div className="bg-white p-10 rounded-2xl shadow-xl border-2 border-[#C6A34E]">
+        <h3 className="text-2xl font-bold mb-6">
+          Subject Masters
+        </h3>
+        <p className="text-lg leading-relaxed">
+          Every tutor is academically strong and subject-specialised.
+          Students are matched with tutors who possess depth,
+          clarity, and proven subject mastery.
+        </p>
+      </div>
+
+      <div className="bg-white p-10 rounded-2xl shadow-xl border-2 border-[#C6A34E]">
+        <h3 className="text-2xl font-bold mb-6">
+          Examination-Focused
+        </h3>
+        <p className="text-lg leading-relaxed">
+          Our tutors operate within the ShoLuc academic system —
+          diagnostic assessment, structured lesson planning,
+          and measurable academic improvement.
+        </p>
+      </div>
+
+      <div className="bg-white p-10 rounded-2xl shadow-xl border-2 border-[#C6A34E]">
+        <h3 className="text-2xl font-bold mb-6">
+          Professional & Disciplined
+        </h3>
+        <p className="text-lg leading-relaxed">
+          Sessions are punctual, structured, and student-centred.
+          We cultivate academic discipline, confidence, and independence.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+      {/* SESSION TYPES - PREMIUM GOLD CARDS */}
+<section className="py-28 px-6 text-center">
+  <h2 className="text-5xl font-extrabold mb-16">
+    Academic Session Formats
+  </h2>
+
+  <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+
+    <div className="p-8 rounded-2xl shadow-xl border-2 border-[#C6A34E]">
+      <h3 className="text-2xl font-bold mb-4">
+        One-on-One Online
+      </h3>
+      <p>
+        Personalised nationwide virtual tutoring tailored
+        to individual academic goals.
+      </p>
+    </div>
+
+    <div className="p-8 rounded-2xl shadow-xl border-2 border-[#C6A34E]">
+      <h3 className="text-2xl font-bold mb-4">
+        Small Group Online
+      </h3>
+      <p>
+        Structured collaborative digital learning (2–5 students).
+      </p>
+    </div>
+
+    <div className="p-8 rounded-2xl shadow-xl border-2 border-[#C6A34E]">
+      <h3 className="text-2xl font-bold mb-4">
+        In-Person One-on-One
+      </h3>
+      <p>
+        Premium private tutoring at the student’s home.
+      </p>
+    </div>
+
+    <div className="p-8 rounded-2xl shadow-xl border-2 border-[#C6A34E]">
+      <h3 className="text-2xl font-bold mb-4">
+        School Workshops
+      </h3>
+      <p>
+        Examination preparation and subject intervention programmes.
+      </p>
+    </div>
+
+  </div>
+</section>
 
       {/* SUBJECTS DISPLAY */}
       <section className="bg-[#111C2A] py-20 px-6 text-center">
