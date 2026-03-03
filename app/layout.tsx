@@ -1,4 +1,7 @@
-export const metadata = {
+import "./globals.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "ShoLuc Education | Premium Tutoring for Grades 8–12 | South Africa",
   description:
     "ShoLuc Education provides elite academic tutoring for Grades 8–12. Specialising in Mathematics, Physical Sciences, Accounting, English, IT and more. Online and in-person tutoring available nationwide.",
@@ -21,3 +24,17 @@ export const metadata = {
     type: "website",
   },
 };
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body className="antialiased bg-[#0B1C2D]">
+        {children}
+      </body>
+    </html>
+  );
+}
