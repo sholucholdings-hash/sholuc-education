@@ -33,66 +33,77 @@ export default function Home() {
   ];
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setLoading(true);
+  e.preventDefault();
+  setLoading(true);
 
-    const form = e.currentTarget;
-    const formData = new FormData(form);
+  const form = e.currentTarget;
+  const formData = new FormData(form);
 
-    const selectedSubjects = formData.getAll("subjects").join(", ");
-    const selectedGrades = formData.getAll("grades").join(", ");
+  const selectedSubjects = formData.getAll("subjects").join(", ");
+  const selectedGrades = formData.getAll("grades").join(", ");
 
-    const data = {
-      applicant: formData.get("applicant"),
-      name: formData.get("name"),
-      contact: formData.get("contact"),
-      email: formData.get("email"),
-      organisation: formData.get("organisation"),
-      role: formData.get("role"),
-      grades: selectedGrades,
-      session: formData.get("session"),
-      frequency: formData.get("frequency"),
-      subjects: selectedSubjects,
-      notes: formData.get("notes"),
-    };
-
-    await fetch("/api/quotation", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-
-    setSuccess(true);
-    form.reset();
-    setLoading(false);
+  const data = {
+    applicant: formData.get("applicant"),
+    name: formData.get("name"),
+    contact: formData.get("contact"),
+    email: formData.get("email"),
+    organisation: formData.get("organisation") || "N/A",
+    role: formData.get("role") || "N/A",
+    grades: selectedGrades,
+    subjects: selectedSubjects,
+    session: formData.get("session"),
+    frequency: formData.get("frequency"),
+    notes: formData.get("notes") || "None",
   };
+
+  await fetch("/api/quotation", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+
+  setSuccess(true);
+  form.reset();
+  setLoading(false);
+};
 
   const handleWhatsApp = (form: HTMLFormElement) => {
-    const formData = new FormData(form);
-    const selectedSubjects = formData.getAll("subjects").join(", ");
-    const selectedGrades = formData.getAll("grades").join(", ");
+  const formData = new FormData(form);
 
-    const message = `
-ShoLuc Education Enquiry
+  const selectedSubjects = formData.getAll("subjects").join(", ");
+  const selectedGrades = formData.getAll("grades").join(", ");
+
+  const message = `
+New Quotation Request
 
 Applicant Type: ${formData.get("applicant")}
+
 Name: ${formData.get("name")}
-Contact: ${formData.get("contact")}
-Email: ${formData.get("email")}
+
+Contact Number: ${formData.get("contact")}
+
+Email Address: ${formData.get("email")}
+
 Organisation: ${formData.get("organisation") || "N/A"}
+
 Role: ${formData.get("role") || "N/A"}
+
 Grades: ${selectedGrades}
+
 Subjects: ${selectedSubjects}
+
 Session Type: ${formData.get("session")}
+
 Frequency: ${formData.get("frequency")}
-Notes: ${formData.get("notes") || "None"}
+
+Additional Notes: ${formData.get("notes") || "None"}
 `;
 
-    window.open(
-      `https://wa.me/27711113547?text=${encodeURIComponent(message)}`,
-      "_blank"
-    );
-  };
+  window.open(
+    `https://wa.me/27711113547?text=${encodeURIComponent(message)}`,
+    "_blank"
+  );
+};
 
   return (
     <div className="min-h-screen bg-[#0B1C2D] text-white font-sans">
@@ -344,17 +355,165 @@ Notes: ${formData.get("notes") || "None"}
 </section>
 
       {/* QUOTATION FORM */}
-      <section id="quotation" className="bg-[#EAF2FF] py-24 px-6 text-[#0B1C2D]">
-        <h2 className="text-4xl font-extrabold text-center mb-12">
-          Request a Quotation
-        </h2>
+<section id="quotation" className="bg-[#EAF2FF] py-24 px-6 text-[#0B1C2D]">
+  <h2 className="text-4xl font-extrabold text-center mb-12">
+    Institutional & Private Academic Quotation Request
+  </h2>
 
-        <form onSubmit={handleSubmit} className="max-w-3xl mx-auto space-y-8">
+  <form onSubmit={handleSubmit} className="max-w-3xl mx-auto space-y-8">
 
-          <div>
-            <label className="font-bold block mb-2">Full Name</label>
-            <input name="name" required className="w-full p-3 rounded border" />
-          </div>
+    {/* Applicant Type */}
+    <div>
+      <label className="font-bold block mb-2">Applicant Type</label>
+      <select
+        name="applicant"
+        required
+        onChange={(e) => setApplicantType(e.target.value)}
+        className="w-full p-3 rounded border"
+      >
+        <option value="">Select</option>
+        <option>Parent</option>
+        <option>School</option>
+        <option>NPO</option>
+        <option>NGO</option>
+      </select>
+    </div>
+
+    {/* Name */}
+    <div>
+      <label className="font-bold block mb-2">Name</label>
+      <input name="name" required className="w-full p-3 rounded border" />
+    </div>
+
+    {/* Contact */}
+    <div>
+      <label className="font-bold block mb-2">Contact Number</label>
+      <input name="contact" required className="w-full p-3 rounded border" />
+    </div>
+
+    {/* Email */}
+    <div>
+      <label className="font-bold block mb-2">Email Address</label>
+      <input type="email" name="email" required className="w-full p-3 rounded border" />
+    </div>
+
+    {/* Organisation & Role */}
+    {(applicantType === "School" ||
+      applicantType === "NPO" ||
+      applicantType === "NGO") && (
+      <>
+        <div>
+          <label className="font-bold block mb-2">Organisation</label>
+          <input name="organisation" className="w-full p-3 rounded border" />
+        </div>
+
+        <div>
+          <label className="font-bold block mb-2">Role</label>
+          <select name="role" className="w-full p-3 rounded border">
+            <option value="">Select</option>
+            <option>Principal</option>
+            <option>HOD</option>
+            <option>Teacher</option>
+            <option>Programme Coordinator</option>
+          </select>
+        </div>
+      </>
+    )}
+
+    {/* Grades (Premium Cards) */}
+    <div>
+      <label className="font-bold block mb-4">Grades</label>
+      <div className="grid md:grid-cols-3 gap-4">
+        {gradesList.map((grade) => (
+          <label key={grade} className="cursor-pointer">
+            <input type="checkbox" name="grades" value={grade} className="peer hidden"/>
+            <div className="p-4 rounded-xl border-2 border-gray-300
+                            peer-checked:border-[#C6A34E]
+                            peer-checked:bg-[#0B1C2D]
+                            peer-checked:text-white
+                            hover:border-[#C6A34E]
+                            transition">
+              {grade}
+            </div>
+          </label>
+        ))}
+      </div>
+    </div>
+
+    {/* Subjects (Premium Cards) */}
+    <div>
+      <label className="font-bold block mb-4">Subjects</label>
+      <div className="grid md:grid-cols-2 gap-4">
+        {subjects.map((subject) => (
+          <label key={subject} className="cursor-pointer">
+            <input type="checkbox" name="subjects" value={subject} className="peer hidden"/>
+            <div className="p-4 rounded-xl border-2 border-gray-300
+                            peer-checked:border-[#C6A34E]
+                            peer-checked:bg-[#0B1C2D]
+                            peer-checked:text-white
+                            hover:border-[#C6A34E]
+                            transition">
+              {subject}
+            </div>
+          </label>
+        ))}
+      </div>
+    </div>
+
+    {/* Session */}
+    <div>
+      <label className="font-bold block mb-2">Session Type</label>
+      <select name="session" required className="w-full p-3 rounded border">
+        <option value="">Select</option>
+        <option>One-on-One Online</option>
+        <option>Small Group Online (2–5)</option>
+        <option>In-Person One-on-One</option>
+        <option>Small Group In-Person</option>
+        <option>School Workshop / Intervention</option>
+      </select>
+    </div>
+
+    {/* Frequency */}
+    <div>
+      <label className="font-bold block mb-2">Frequency</label>
+      <select name="frequency" required className="w-full p-3 rounded border">
+        <option value="">Select</option>
+        <option>Once per week</option>
+        <option>Twice per week</option>
+        <option>3+ Sessions per week</option>
+        <option>Intensive Exam Programme</option>
+      </select>
+    </div>
+
+    {/* Notes */}
+    <div>
+      <label className="font-bold block mb-2">Additional Notes</label>
+      <textarea name="notes" className="w-full p-3 rounded border" />
+    </div>
+
+    <button
+      type="submit"
+      disabled={loading}
+      className="w-full bg-[#0B1C2D] text-white py-3 rounded font-semibold hover:bg-black transition"
+    >
+      {loading ? "Submitting..." : "Submit Quotation Request"}
+    </button>
+
+    <button
+      type="button"
+      onClick={(e) => handleWhatsApp(e.currentTarget.form!)}
+      className="w-full bg-green-600 text-white py-3 rounded font-semibold hover:bg-green-700 transition"
+    >
+      Enquire via WhatsApp
+    </button>
+
+    {success && (
+      <p className="text-green-600 text-center font-medium">
+        Your request has been submitted successfully.
+      </p>
+    )}
+  </form>
+</section>
 
           {/* PREMIUM GRADE CARDS */}
           <div>
