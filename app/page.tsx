@@ -106,31 +106,98 @@ Notes: ${formData.get("notes") || "None"}
 
       {/* FOUNDER SECTION */}
 <section className="bg-white text-[#0B1C2D] py-24 px-6">
-  <div className="max-w-5xl mx-auto text-center">
+  <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
-    <h2 className="text-4xl md:text-5xl font-extrabold mb-8">
-      Meet the Founder
+    {/* Founder Image */}
+    <div className="flex justify-center">
+      <img
+        src="/founder.jpg"
+        alt="Lucky Shongwe - Founder of ShoLuc Education"
+        className="w-72 h-72 object-cover rounded-full shadow-2xl border-4 border-[#C6A34E]"
+      />
+    </div>
+
+    {/* Founder Text */}
+    <div>
+      <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
+        Meet the Founder
+      </h2>
+
+      <p className="text-xl font-semibold mb-4 text-[#C6A34E]">
+        Lucky Shongwe — Educator & Academic Strategist
+      </p>
+
+      <p className="text-lg leading-relaxed mb-4">
+        ShoLuc Education was founded on the principle that academic excellence
+        must be intentional, structured, and measurable. With extensive
+        classroom experience and curriculum expertise, Lucky Shongwe has
+        developed a results-driven tutoring framework aligned with examination mastery.
+      </p>
+
+      <p className="text-lg leading-relaxed">
+        This is not remedial tutoring — it is strategic academic elevation.
+        Our students gain confidence, intellectual discipline, and sustained
+        academic distinction.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+{/* TUTORS SECTION */}
+<section className="bg-[#F8F6F1] text-[#0B1C2D] py-24 px-6">
+  <div className="max-w-6xl mx-auto text-center">
+
+    <h2 className="text-4xl md:text-5xl font-extrabold mb-12">
+      Our Tutors
     </h2>
 
-    <p className="text-xl font-semibold mb-4 text-[#C6A34E]">
-      Lucky Shongwe — Educator & Academic Strategist
-    </p>
+    <div className="grid md:grid-cols-3 gap-10 text-left">
 
-    <p className="text-lg leading-relaxed max-w-3xl mx-auto mb-6">
-      ShoLuc Education was founded on a simple principle: academic excellence
-      must be intentional, structured, and measurable. With years of classroom
-      experience and curriculum expertise, Lucky Shongwe has built a tutoring
-      system that combines diagnostic precision, conceptual mastery, and
-      examination-focused strategy. The tutors and academic team at ShoLuc Education
-      have a remarkable teaching track record, patience and core understanding
-      of their subject matter.
-    </p>
+      <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+        <h3 className="text-2xl font-bold mb-4 text-[#C6A34E]">
+          Qualified & Subject-Specialised
+        </h3>
+        <p className="text-lg leading-relaxed">
+          Every ShoLuc tutor is carefully selected based on subject mastery,
+          academic performance, and teaching competence. We match students
+          with tutors who specialise in their required subject areas to ensure
+          depth, clarity, and confidence in learning.
+        </p>
+      </div>
 
-    <p className="text-lg leading-relaxed max-w-3xl mx-auto">
-      Our approach is not remedial — it is transformative. We cultivate
-      confidence, intellectual discipline, and academic distinction in every
-      learner we serve.
-    </p>
+      <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+        <h3 className="text-2xl font-bold mb-4 text-[#C6A34E]">
+          Structured & Examination-Focused
+        </h3>
+        <p className="text-lg leading-relaxed">
+          Our tutors are trained within the ShoLuc academic framework,
+          emphasising diagnostic assessment, structured lesson planning,
+          and measurable academic outcomes aligned with CAPS and IEB standards.
+        </p>
+      </div>
+
+      <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+        <h3 className="text-2xl font-bold mb-4 text-[#C6A34E]">
+          Professional & Student-Centred
+        </h3>
+        <p className="text-lg leading-relaxed">
+          Beyond academic support, our tutors cultivate discipline,
+          motivation, and independent thinking. Sessions are conducted
+          with professionalism, punctuality, and a genuine commitment
+          to student growth.
+        </p>
+      </div>
+
+    </div>
+
+    <div className="mt-16 max-w-4xl mx-auto">
+      <p className="text-xl leading-relaxed font-medium">
+        At ShoLuc Education, tutoring is not transactional — it is transformational.
+        We partner with families, schools, and organisations to produce
+        sustained academic excellence.
+      </p>
+    </div>
 
   </div>
 </section>
