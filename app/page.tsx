@@ -121,7 +121,9 @@ Notes: ${formData.get("notes") || "None"}
       must be intentional, structured, and measurable. With years of classroom
       experience and curriculum expertise, Lucky Shongwe has built a tutoring
       system that combines diagnostic precision, conceptual mastery, and
-      examination-focused strategy.
+      examination-focused strategy. The tutors and academic team at ShoLuc Education
+      have a remarkable teaching track record, patience and core understanding
+      of their subject matter.
     </p>
 
     <p className="text-lg leading-relaxed max-w-3xl mx-auto">
