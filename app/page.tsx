@@ -69,7 +69,6 @@ export default function Home() {
 
   const handleWhatsApp = (form: HTMLFormElement) => {
     const formData = new FormData(form);
-
     const selectedSubjects = formData.getAll("subjects").join(", ");
     const selectedGrades = formData.getAll("grades").join(", ");
 
@@ -107,7 +106,6 @@ Notes: ${formData.get("notes") || "None"}
           Elite Academic Tutoring for Grades 8–12.
           Nationwide Online Excellence. Institutional Partnerships.
         </p>
-
         <a
           href="#quotation"
           className="bg-[#C6A34E] text-black px-8 py-4 rounded-xl font-semibold hover:bg-[#b8923f] transition"
@@ -116,163 +114,166 @@ Notes: ${formData.get("notes") || "None"}
         </a>
       </section>
 
+      {/* FOUNDER */}
+      <section className="bg-white text-[#0B1C2D] py-24 px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div className="flex justify-center">
+            <img
+              src="/founder.jpg"
+              alt="Founder"
+              className="w-72 h-72 object-cover rounded-full shadow-2xl border-4 border-[#C6A34E]"
+            />
+          </div>
+          <div>
+            <h2 className="text-4xl font-extrabold mb-6">
+              Meet the Founder
+            </h2>
+            <p className="text-xl font-semibold mb-4 text-[#C6A34E]">
+              Lucky Shongwe — Educator & Academic Strategist
+            </p>
+            <p className="text-lg leading-relaxed mb-4">
+              ShoLuc Education was founded on structured excellence,
+              measurable improvement, and academic mastery.
+            </p>
+            <p className="text-lg leading-relaxed">
+              This is not remedial tutoring — it is strategic academic elevation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* TUTORS */}
+      <section className="bg-[#F8F6F1] text-[#0B1C2D] py-24 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-4xl font-extrabold mb-12">
+            Our Tutors
+          </h2>
+          <p className="text-lg max-w-4xl mx-auto">
+            Carefully selected, academically strong, examination-focused,
+            and professionally trained within the ShoLuc framework.
+          </p>
+        </div>
+      </section>
+
+      {/* SESSION TYPES */}
+      <section className="py-20 px-6 text-center">
+        <h2 className="text-4xl font-bold mb-12">Academic Session Types</h2>
+        <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+          <div className="border border-gray-600 p-6 rounded-xl">
+            One-on-One Online
+          </div>
+          <div className="border border-gray-600 p-6 rounded-xl">
+            Small Group Online
+          </div>
+          <div className="border border-gray-600 p-6 rounded-xl">
+            In-Person One-on-One
+          </div>
+          <div className="border border-gray-600 p-6 rounded-xl">
+            Small Group In-Person
+          </div>
+        </div>
+      </section>
+
+      {/* SUBJECTS DISPLAY */}
+      <section className="bg-[#111C2A] py-20 px-6 text-center">
+        <h2 className="text-4xl font-bold mb-12">Subjects Offered</h2>
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {subjects.map((subject) => (
+            <div key={subject} className="border border-gray-600 p-4 rounded-lg">
+              {subject}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="bg-[#111C2A] py-24 px-6 text-white">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-16">
+            What Parents & Schools Say
+          </h2>
+          <div className="grid md:grid-cols-2 gap-10">
+            <div className="bg-[#0B1C2D] p-8 rounded-2xl">
+              “Marks improved significantly.”
+            </div>
+            <div className="bg-[#0B1C2D] p-8 rounded-2xl">
+              “Professional and structured.”
+            </div>
+            <div className="bg-[#0B1C2D] p-8 rounded-2xl">
+              “Highly recommended.”
+            </div>
+            <div className="bg-[#0B1C2D] p-8 rounded-2xl">
+              “Excellent academic support.”
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* QUOTATION FORM */}
       <section id="quotation" className="bg-[#EAF2FF] py-24 px-6 text-[#0B1C2D]">
         <h2 className="text-4xl font-extrabold text-center mb-12">
-          Institutional & Private Academic Quotation Request
+          Request a Quotation
         </h2>
 
-        <form onSubmit={handleSubmit} className="max-w-3xl mx-auto space-y-6">
+        <form onSubmit={handleSubmit} className="max-w-3xl mx-auto space-y-8">
 
-          {/* Applicant Type */}
-          <div>
-            <label className="font-bold block mb-2">Applicant Type</label>
-            <select
-              name="applicant"
-              required
-              onChange={(e) => setApplicantType(e.target.value)}
-              className="w-full p-3 rounded border"
-            >
-              <option value="">Select</option>
-              <option>Parent</option>
-              <option>School</option>
-              <option>NPO</option>
-              <option>NGO</option>
-            </select>
-          </div>
-
-          {/* Name */}
           <div>
             <label className="font-bold block mb-2">Full Name</label>
             <input name="name" required className="w-full p-3 rounded border" />
           </div>
 
-          {/* Contact */}
+          {/* PREMIUM GRADE CARDS */}
           <div>
-            <label className="font-bold block mb-2">Contact Number</label>
-            <input name="contact" required className="w-full p-3 rounded border" />
+            <label className="font-bold block mb-4">Grade(s)</label>
+            <div className="grid md:grid-cols-3 gap-4">
+              {gradesList.map((grade) => (
+                <label key={grade} className="cursor-pointer">
+                  <input type="checkbox" name="grades" value={grade} className="peer hidden"/>
+                  <div className="p-4 rounded-xl border-2 border-gray-300
+                                  peer-checked:border-[#C6A34E]
+                                  peer-checked:bg-[#0B1C2D]
+                                  peer-checked:text-white
+                                  hover:border-[#C6A34E]
+                                  transition">
+                    {grade}
+                  </div>
+                </label>
+              ))}
+            </div>
           </div>
 
-          {/* Email */}
+          {/* PREMIUM SUBJECT CARDS */}
           <div>
-            <label className="font-bold block mb-2">Email Address</label>
-            <input type="email" name="email" required className="w-full p-3 rounded border" />
-          </div>
-
-          {/* Grade Multi-Select (Premium Cards) */}
-<div>
-  <label className="font-bold block mb-4 text-lg">
-    Grade(s) Required
-  </label>
-
-  <div className="grid md:grid-cols-3 gap-4">
-    {gradesList.map((grade) => (
-      <label key={grade} className="cursor-pointer">
-        <input
-          type="checkbox"
-          name="grades"
-          value={grade}
-          className="peer hidden"
-        />
-        <div className="p-4 rounded-xl border-2 border-gray-300 
-                        peer-checked:border-[#C6A34E] 
-                        peer-checked:bg-[#0B1C2D] 
-                        peer-checked:text-white 
-                        hover:border-[#C6A34E] 
-                        transition-all duration-200">
-          {grade}
-        </div>
-      </label>
-    ))}
-  </div>
-</div>
-
-
-{/* Subjects Multi-Select (Premium Cards) */}
-<div>
-  <label className="font-bold block mb-4 text-lg">
-    Subjects Required
-  </label>
-
-  <div className="grid md:grid-cols-2 gap-4">
-    {subjects.map((subject) => (
-      <label key={subject} className="cursor-pointer">
-        <input
-          type="checkbox"
-          name="subjects"
-          value={subject}
-          className="peer hidden"
-        />
-        <div className="p-4 rounded-xl border-2 border-gray-300 
-                        peer-checked:border-[#C6A34E] 
-                        peer-checked:bg-[#0B1C2D] 
-                        peer-checked:text-white 
-                        hover:border-[#C6A34E] 
-                        transition-all duration-200">
-          {subject}
-        </div>
-      </label>
-    ))}
-  </div>
-</div>
-
-          {/* Session Type */}
-          <div>
-            <label className="font-bold block mb-2">Session Type</label>
-            <select name="session" required className="w-full p-3 rounded border">
-              <option value="">Select</option>
-              <option>One-on-One Online</option>
-              <option>Small Group Online (2–5)</option>
-              <option>In-Person One-on-One</option>
-              <option>Small Group In-Person</option>
-              <option>School Workshop / Intervention</option>
-            </select>
-          </div>
-
-          {/* Frequency */}
-          <div>
-            <label className="font-bold block mb-2">Frequency</label>
-            <select name="frequency" required className="w-full p-3 rounded border">
-              <option value="">Select</option>
-              <option>Once per week</option>
-              <option>Twice per week</option>
-              <option>3+ Sessions per week</option>
-              <option>Intensive Exam Programme</option>
-            </select>
-          </div>
-
-          {/* Notes */}
-          <div>
-            <label className="font-bold block mb-2">Additional Notes</label>
-            <textarea name="notes" className="w-full p-3 rounded border" />
+            <label className="font-bold block mb-4">Subjects</label>
+            <div className="grid md:grid-cols-2 gap-4">
+              {subjects.map((subject) => (
+                <label key={subject} className="cursor-pointer">
+                  <input type="checkbox" name="subjects" value={subject} className="peer hidden"/>
+                  <div className="p-4 rounded-xl border-2 border-gray-300
+                                  peer-checked:border-[#C6A34E]
+                                  peer-checked:bg-[#0B1C2D]
+                                  peer-checked:text-white
+                                  hover:border-[#C6A34E]
+                                  transition">
+                    {subject}
+                  </div>
+                </label>
+              ))}
+            </div>
           </div>
 
           <button
             type="submit"
-            disabled={loading}
             className="w-full bg-[#0B1C2D] text-white py-3 rounded font-semibold hover:bg-black transition"
           >
-            {loading ? "Submitting..." : "Submit Quotation Request"}
+            Submit Quotation Request
           </button>
 
-          <button
-            type="button"
-            onClick={(e) => handleWhatsApp(e.currentTarget.form!)}
-            className="w-full bg-green-600 text-white py-3 rounded font-semibold hover:bg-green-700 transition"
-          >
-            Enquire via WhatsApp
-          </button>
-
-          {success && (
-            <p className="text-green-600 text-center font-medium">
-              Your request has been submitted successfully.
-            </p>
-          )}
         </form>
       </section>
 
       <footer className="bg-black py-10 text-center text-sm">
-        © {new Date().getFullYear()} ShoLuc Education | Nationwide Academic Excellence
+        © {new Date().getFullYear()} ShoLuc Education
       </footer>
     </div>
   );
