@@ -104,6 +104,35 @@ Notes: ${formData.get("notes") || "None"}
         </a>
       </section>
 
+      {/* FOUNDER SECTION */}
+<section className="bg-white text-[#0B1C2D] py-24 px-6">
+  <div className="max-w-5xl mx-auto text-center">
+
+    <h2 className="text-4xl md:text-5xl font-extrabold mb-8">
+      Meet the Founder
+    </h2>
+
+    <p className="text-xl font-semibold mb-4 text-[#C6A34E]">
+      Lucky Shongwe — Educator & Academic Strategist
+    </p>
+
+    <p className="text-lg leading-relaxed max-w-3xl mx-auto mb-6">
+      ShoLuc Education was founded on a simple principle: academic excellence
+      must be intentional, structured, and measurable. With years of classroom
+      experience and curriculum expertise, Lucky Shongwe has built a tutoring
+      system that combines diagnostic precision, conceptual mastery, and
+      examination-focused strategy.
+    </p>
+
+    <p className="text-lg leading-relaxed max-w-3xl mx-auto">
+      Our approach is not remedial — it is transformative. We cultivate
+      confidence, intellectual discipline, and academic distinction in every
+      learner we serve.
+    </p>
+
+  </div>
+</section>
+
       {/* SESSION TYPES */}
       <section className="py-20 px-6 text-center">
         <h2 className="text-4xl font-bold mb-12">Academic Session Types</h2>
@@ -146,6 +175,61 @@ Notes: ${formData.get("notes") || "None"}
           ))}
         </div>
       </section>
+
+      {/* TESTIMONIALS */}
+<section className="bg-[#111C2A] py-24 px-6 text-white">
+  <div className="max-w-6xl mx-auto text-center">
+
+    <h2 className="text-4xl md:text-5xl font-bold mb-16">
+      What Parents & Schools Say
+    </h2>
+
+    <div className="grid md:grid-cols-2 gap-10">
+
+      <div className="bg-[#0B1C2D] p-8 rounded-2xl shadow-lg border border-gray-700">
+        <p className="italic mb-4">
+          “ShoLuc Education transformed my son’s approach to Mathematics.
+          His confidence improved dramatically and his marks followed.”
+        </p>
+        <p className="font-semibold text-[#C6A34E]">
+          — Parent, Grade 11 Student
+        </p>
+      </div>
+
+      <div className="bg-[#0B1C2D] p-8 rounded-2xl shadow-lg border border-gray-700">
+        <p className="italic mb-4">
+          “The structured exam preparation workshop delivered measurable
+          results across our Grade 12 cohort.”
+        </p>
+        <p className="font-semibold text-[#C6A34E]">
+          — High School Principal
+        </p>
+      </div>
+
+      <div className="bg-[#0B1C2D] p-8 rounded-2xl shadow-lg border border-gray-700">
+        <p className="italic mb-4">
+          “Professional, organised, and academically rigorous.
+          We highly recommend ShoLuc Education.”
+        </p>
+        <p className="font-semibold text-[#C6A34E]">
+          — HOD, Sciences Department
+        </p>
+      </div>
+
+      <div className="bg-[#0B1C2D] p-8 rounded-2xl shadow-lg border border-gray-700">
+        <p className="italic mb-4">
+          “Our learners responded exceptionally well to the intervention
+          programme. The improvement was evident within weeks.”
+        </p>
+        <p className="font-semibold text-[#C6A34E]">
+          — NGO Programme Coordinator
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
       {/* QUOTATION FORM */}
       <section id="quotation" className="bg-[#EAF2FF] py-24 px-6 text-[#0B1C2D]">
