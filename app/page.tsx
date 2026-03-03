@@ -258,28 +258,90 @@ Notes: ${formData.get("notes") || "None"}
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section className="bg-[#111C2A] py-24 px-6 text-white">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-16">
-            What Parents & Schools Say
-          </h2>
-          <div className="grid md:grid-cols-2 gap-10">
-            <div className="bg-[#0B1C2D] p-8 rounded-2xl">
-              “Marks improved significantly.”
-            </div>
-            <div className="bg-[#0B1C2D] p-8 rounded-2xl">
-              “Professional and structured.”
-            </div>
-            <div className="bg-[#0B1C2D] p-8 rounded-2xl">
-              “Highly recommended.”
-            </div>
-            <div className="bg-[#0B1C2D] p-8 rounded-2xl">
-              “Excellent academic support.”
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* TESTIMONIALS – AUTHORITY & RESULTS */}
+<section className="bg-[#111C2A] py-28 px-6 text-white">
+  <div className="max-w-6xl mx-auto">
+
+    <h2 className="text-5xl font-extrabold text-center mb-20">
+      Transformational Results
+    </h2>
+
+    {/* APHIWE FEATURED TESTIMONIAL */}
+    <div className="bg-[#0B1C2D] p-12 rounded-3xl shadow-2xl border-2 border-[#C6A34E] mb-20">
+      <p className="text-2xl font-semibold text-[#C6A34E] mb-6">
+        Aphiwokuhle Khuzwayo  
+        <span className="block text-lg text-gray-300">
+          Grade 10–12 | Former Southdowns College | University of Pretoria
+        </span>
+      </p>
+
+      <p className="text-lg leading-relaxed mb-6">
+        “A tutor teaches content. A mentor builds a person.  
+        Mr Shongwe did both.”
+      </p>
+
+      <p className="text-lg leading-relaxed mb-6">
+        Under his guidance, Physics became the subject in which I achieved my first-ever 80%.
+        But more than the mark, he refined my mentality. He sharpened my discipline,
+        reshaped how I approached problems, and strengthened my belief in my own potential.
+      </p>
+
+      <p className="text-lg leading-relaxed mb-6">
+        He followed up after every test, held me accountable, and refused to let me settle
+        for less than excellence. His mentorship extended beyond Physics — it shaped how
+        I approach life and academic challenges today.
+      </p>
+
+      <p className="text-lg font-semibold">
+        “He did not simply teach me Physics.  
+        He strengthened my mindset.”
+      </p>
+    </div>
+
+    {/* GRID TESTIMONIALS */}
+    <div className="grid md:grid-cols-2 gap-12">
+
+      <div className="bg-[#0B1C2D] p-10 rounded-2xl shadow-xl border-2 border-[#C6A34E]">
+        <p className="text-xl font-semibold text-[#C6A34E] mb-4">
+          Lilitha — Grade 10–12
+        </p>
+        <p className="leading-relaxed">
+          “SHOLUC Education gave me the best experience. Online lessons twice a week
+          and close contact with my teacher made all the difference. Mr Shongwe pushed
+          me beyond what I believed I could achieve and built my self-confidence.
+          He thrives for nothing but greatness.”
+        </p>
+      </div>
+
+      <div className="bg-[#0B1C2D] p-10 rounded-2xl shadow-xl border-2 border-[#C6A34E]">
+        <p className="text-xl font-semibold text-[#C6A34E] mb-4">
+          Oratile — Grade 11–12
+        </p>
+        <p className="leading-relaxed">
+          “SHOLUC Education was truly a blessing to my academics.
+          They strengthened my understanding of Physics, Mathematics,
+          and English writing. Their guidance helped me improve my confidence
+          and ultimately gain university admission for the degree I’ve always wanted.”
+        </p>
+      </div>
+
+      <div className="bg-[#0B1C2D] p-10 rounded-2xl shadow-xl border-2 border-[#C6A34E] md:col-span-2">
+        <p className="text-xl font-semibold text-[#C6A34E] mb-4">
+          Principal — UJA School
+        </p>
+        <p className="leading-relaxed">
+          “ShoLuc Education has demonstrated exceptional professionalism,
+          structure, and measurable academic impact. Their examination preparation
+          workshops were delivered with clarity, discipline, and strategic insight.
+          We observed improved learner confidence and stronger performance across
+          targeted subjects. We regard ShoLuc Education as a credible academic partner.”
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
       {/* QUOTATION FORM */}
       <section id="quotation" className="bg-[#EAF2FF] py-24 px-6 text-[#0B1C2D]">
