@@ -117,6 +117,9 @@ Additional Notes: ${formData.get("notes") || "None"}
           Elite Academic Tutoring for Grades 8–12.
           Nationwide Online Excellence. Institutional Partnerships.
         </p>
+        <p className="text-sm text-gray-400 mb-8">
+  Trusted by students now studying at leading South African universities.
+</p>
         <a
           href="#quotation"
           className="bg-[#C6A34E] text-black px-8 py-4 rounded-xl font-semibold hover:bg-[#b8923f] transition"
@@ -352,6 +355,25 @@ Additional Notes: ${formData.get("notes") || "None"}
     </div>
 
   </div>
+</section>
+
+{/* FINAL CALL TO ACTION */}
+<section className="bg-[#0B1C2D] py-20 px-6 text-center">
+  <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
+    Secure Academic Excellence Today
+  </h2>
+
+  <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
+    Whether you are a parent, school, or organisation, ShoLuc Education
+    provides structured, measurable academic advancement.
+  </p>
+
+  <a
+    href="#quotation"
+    className="bg-[#C6A34E] text-black px-10 py-4 rounded-xl font-semibold hover:bg-[#b8923f] transition"
+  >
+    Request a Confidential Quotation
+  </a>
 </section>
 
       {/* QUOTATION FORM */}
