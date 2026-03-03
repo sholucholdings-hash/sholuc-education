@@ -1,11 +1,11 @@
 import "./globals.css";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "ShoLuc Education | Premium Tutoring for Grades 8–12 | South Africa",
-  description:
-    "ShoLuc Education provides elite academic tutoring for Grades 8–12. Specialising in Mathematics, Physical Sciences, Accounting, English, IT and more. Online and in-person tutoring available nationwide.",
-  keywords: [
+  description: "ShoLuc Education provides elite academic tutoring for Grades 8–12...",
+  
+   keywords: [
     "Maths tutor South Africa",
     "Physics tutor Grade 12",
     "Online tutoring South Africa",
@@ -15,6 +15,11 @@ export const metadata: Metadata = {
     "Johannesburg tutoring",
     "Exam preparation workshops",
   ],
+
+  verification: {
+    google: "FxMGuDWIF3SfApj6rXTZWiR6XdeLFsdPT2NXWPRUARU",
+  },
+
   openGraph: {
     title: "ShoLuc Education | Premium Academic Tutoring",
     description:
