@@ -55,95 +55,95 @@ export default function Home() {
           Founder & Academic Strategist
         </h2>
         <p className="max-w-3xl mx-auto text-lg leading-relaxed">
-          Founded by <strong>Lucky Shongwe</strong>, an experienced educator and academic strategist,
-          ShoLuc Education is built on structured methodology, diagnostic assessment,
-          and examination-focused mastery. Our systems are designed to cultivate
-          confidence, independence, and measurable academic distinction.
+          Founded by <strong>Lucky Shongwe</strong>, ShoLuc Education
+          operates on structured methodology, diagnostic assessment,
+          and examination-focused mastery. We cultivate confidence,
+          independence, and measurable academic distinction.
         </p>
       </section>
 
-      {/* Subjects Section */}
+      {/* Session Types Section */}
       <section className="py-20 px-6 text-center">
         <h2 className="text-4xl font-bold mb-12">
-          Subjects Offered
+          Academic Session Types
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto text-lg">
-          <div>Mathematics</div>
-          <div>Physical Sciences</div>
-          <div>Life Sciences</div>
-          <div>Accounting</div>
-          <div>English</div>
-          <div>Afrikaans</div>
-          <div>IsiZulu</div>
-          <div>Geography</div>
-          <div>Business Studies</div>
-          <div>Economics</div>
-          <div>History</div>
-          <div>Exam Preparation Workshops</div>
-        </div>
-      </section>
+        <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto text-lg">
+          <div className="border border-gray-600 p-6 rounded-xl">
+            <h3 className="text-2xl font-bold mb-3 text-[#C6A34E]">
+              One-on-One Online
+            </h3>
+            <p>Personalised nationwide virtual tutoring.</p>
+          </div>
 
-      {/* Pricing Section */}
-      <section className="bg-[#F8F6F1] text-[#0B1C2D] py-20 px-6 text-center">
-        <h2 className="text-4xl font-bold mb-12">
-          Premium Academic Packages
-        </h2>
+          <div className="border border-gray-600 p-6 rounded-xl">
+            <h3 className="text-2xl font-bold mb-3 text-[#C6A34E]">
+              Small Group Online (2–5 Students)
+            </h3>
+            <p>Structured collaborative digital learning.</p>
+          </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <div>
-            <h3 className="font-semibold text-xl">Online One-on-One</h3>
-            <p>R350 / hour</p>
+          <div className="border border-gray-600 p-6 rounded-xl">
+            <h3 className="text-2xl font-bold mb-3 text-[#C6A34E]">
+              In-Person One-on-One
+            </h3>
+            <p>Premium private tutoring at the student’s home.</p>
           </div>
-          <div>
-            <h3 className="font-semibold text-xl">Small Group Online (2–5)</h3>
-            <p>R200 / hour per student</p>
+
+          <div className="border border-gray-600 p-6 rounded-xl">
+            <h3 className="text-2xl font-bold mb-3 text-[#C6A34E]">
+              Small Group In-Person
+            </h3>
+            <p>Focused group sessions for measurable progress.</p>
           </div>
-          <div>
-            <h3 className="font-semibold text-xl">In-Person One-on-One</h3>
-            <p>R450 / hour</p>
-          </div>
-          <div>
-            <h3 className="font-semibold text-xl">Small Group In-Person</h3>
-            <p>R250 / hour per student</p>
-          </div>
-          <div>
-            <h3 className="font-semibold text-xl">School Package (15+)</h3>
-            <p>R50 / hour per student</p>
+
+          <div className="border border-gray-600 p-6 rounded-xl md:col-span-2">
+            <h3 className="text-2xl font-bold mb-3 text-[#C6A34E]">
+              School Packages & Exam Workshops
+            </h3>
+            <p>
+              Large-group academic interventions, examination preparation
+              programmes, and structured school partnerships.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Quotation Form */}
-      <section id="quotation" className="py-20 px-6 text-center">
-        <h2 className="text-4xl font-bold mb-10">
-          Request a Confidential Quotation
+      {/* Quotation Section */}
+      <section id="quotation" className="bg-[#EAF2FF] py-24 px-6 text-[#0B1C2D]">
+        <h2 className="text-4xl font-extrabold text-center mb-12">
+          Request a Confidential Academic Quotation
         </h2>
 
         <form
           onSubmit={handleSubmit}
-          className="max-w-2xl mx-auto space-y-4"
+          className="max-w-2xl mx-auto space-y-5"
         >
-          <input name="parent" placeholder="Parent Name" required className="w-full p-3 rounded text-black" />
-          <input name="student" placeholder="Student Name" required className="w-full p-3 rounded text-black" />
-          <input name="grade" placeholder="Grade" required className="w-full p-3 rounded text-black" />
-          <input name="subject" placeholder="Subject" required className="w-full p-3 rounded text-black" />
-          <input name="session" placeholder="Session Type" required className="w-full p-3 rounded text-black" />
-          <input name="frequency" placeholder="Sessions Per Week" required className="w-full p-3 rounded text-black" />
-          <input name="contact" placeholder="Contact Number" required className="w-full p-3 rounded text-black" />
-          <input name="email" placeholder="Email Address" required className="w-full p-3 rounded text-black" />
-          <textarea name="notes" placeholder="Additional Notes" className="w-full p-3 rounded text-black" />
+          <h3 className="text-lg font-bold">Parent Information</h3>
+          <input name="parent" placeholder="Parent Name" required className="w-full p-3 rounded border" />
+          <input name="contact" placeholder="Contact Number" required className="w-full p-3 rounded border" />
+          <input name="email" placeholder="Email Address" required className="w-full p-3 rounded border" />
+
+          <h3 className="text-lg font-bold mt-6">Student Information</h3>
+          <input name="student" placeholder="Student Name" required className="w-full p-3 rounded border" />
+          <input name="grade" placeholder="Grade" required className="w-full p-3 rounded border" />
+          <input name="subject" placeholder="Subject(s) Required" required className="w-full p-3 rounded border" />
+
+          <h3 className="text-lg font-bold mt-6">Session Details</h3>
+          <input name="session" placeholder="Preferred Session Type" required className="w-full p-3 rounded border" />
+          <input name="frequency" placeholder="Sessions Per Week" required className="w-full p-3 rounded border" />
+          <textarea name="notes" placeholder="Additional Notes" className="w-full p-3 rounded border" />
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-[#C6A34E] text-black py-3 rounded font-semibold hover:bg-[#b8923f] transition"
+            className="w-full bg-[#0B1C2D] text-white py-3 rounded font-semibold hover:bg-black transition"
           >
             {loading ? "Submitting..." : "Submit Request"}
           </button>
 
           {success && (
-            <p className="text-green-400 mt-4">
+            <p className="text-green-600 text-center font-medium">
               Your request has been submitted successfully.
             </p>
           )}
