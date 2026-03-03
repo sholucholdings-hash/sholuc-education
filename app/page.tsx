@@ -23,6 +23,15 @@ export default function Home() {
     "Computer Applications Technology (CAT)"
   ];
 
+  const gradesList = [
+    "Grade 8",
+    "Grade 9",
+    "Grade 10",
+    "Grade 11",
+    "Grade 12",
+    "Mixed Grades / Large Group"
+  ];
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
@@ -30,7 +39,8 @@ export default function Home() {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    const selectedSubjects = formData.getAll("subjects");
+    const selectedSubjects = formData.getAll("subjects").join(", ");
+    const selectedGrades = formData.getAll("grades").join(", ");
 
     const data = {
       applicant: formData.get("applicant"),
@@ -39,10 +49,10 @@ export default function Home() {
       email: formData.get("email"),
       organisation: formData.get("organisation"),
       role: formData.get("role"),
-      grade: formData.get("grade"),
+      grades: selectedGrades,
       session: formData.get("session"),
       frequency: formData.get("frequency"),
-      subjects: selectedSubjects.join(", "),
+      subjects: selectedSubjects,
       notes: formData.get("notes"),
     };
 
@@ -59,7 +69,9 @@ export default function Home() {
 
   const handleWhatsApp = (form: HTMLFormElement) => {
     const formData = new FormData(form);
+
     const selectedSubjects = formData.getAll("subjects").join(", ");
+    const selectedGrades = formData.getAll("grades").join(", ");
 
     const message = `
 ShoLuc Education Enquiry
@@ -70,7 +82,7 @@ Contact: ${formData.get("contact")}
 Email: ${formData.get("email")}
 Organisation: ${formData.get("organisation") || "N/A"}
 Role: ${formData.get("role") || "N/A"}
-Grade: ${formData.get("grade")}
+Grades: ${selectedGrades}
 Subjects: ${selectedSubjects}
 Session Type: ${formData.get("session")}
 Frequency: ${formData.get("frequency")}
@@ -104,202 +116,6 @@ Notes: ${formData.get("notes") || "None"}
         </a>
       </section>
 
-      {/* FOUNDER SECTION */}
-<section className="bg-white text-[#0B1C2D] py-24 px-6">
-  <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-
-    {/* Founder Image */}
-    <div className="flex justify-center">
-      <img
-        src="/founder.jpg"
-        alt="Lucky Shongwe - Founder of ShoLuc Education"
-        className="w-72 h-72 object-cover rounded-full shadow-2xl border-4 border-[#C6A34E]"
-      />
-    </div>
-
-    {/* Founder Text */}
-    <div>
-      <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
-        Meet the Founder
-      </h2>
-
-      <p className="text-xl font-semibold mb-4 text-[#C6A34E]">
-        Lucky Shongwe — Educator & Academic Strategist
-      </p>
-
-      <p className="text-lg leading-relaxed mb-4">
-        ShoLuc Education was founded on the principle that academic excellence
-        must be intentional, structured, and measurable. With extensive
-        classroom experience and curriculum expertise, Lucky Shongwe has
-        developed a results-driven tutoring framework aligned with examination mastery.
-      </p>
-
-      <p className="text-lg leading-relaxed">
-        This is not remedial tutoring — it is strategic academic elevation.
-        Our students gain confidence, intellectual discipline, and sustained
-        academic distinction.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-{/* TUTORS SECTION */}
-<section className="bg-[#F8F6F1] text-[#0B1C2D] py-24 px-6">
-  <div className="max-w-6xl mx-auto text-center">
-
-    <h2 className="text-4xl md:text-5xl font-extrabold mb-12">
-      Our Tutors
-    </h2>
-
-    <div className="grid md:grid-cols-3 gap-10 text-left">
-
-      <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
-        <h3 className="text-2xl font-bold mb-4 text-[#C6A34E]">
-          Qualified & Subject-Specialised
-        </h3>
-        <p className="text-lg leading-relaxed">
-          Every ShoLuc tutor is carefully selected based on subject mastery,
-          academic performance, and teaching competence. We match students
-          with tutors who specialise in their required subject areas to ensure
-          depth, clarity, and confidence in learning.
-        </p>
-      </div>
-
-      <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
-        <h3 className="text-2xl font-bold mb-4 text-[#C6A34E]">
-          Structured & Examination-Focused
-        </h3>
-        <p className="text-lg leading-relaxed">
-          Our tutors are trained within the ShoLuc academic framework,
-          emphasising diagnostic assessment, structured lesson planning,
-          and measurable academic outcomes aligned with CAPS and IEB standards.
-        </p>
-      </div>
-
-      <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
-        <h3 className="text-2xl font-bold mb-4 text-[#C6A34E]">
-          Professional & Student-Centred
-        </h3>
-        <p className="text-lg leading-relaxed">
-          Beyond academic support, our tutors cultivate discipline,
-          motivation, and independent thinking. Sessions are conducted
-          with professionalism, punctuality, and a genuine commitment
-          to student growth.
-        </p>
-      </div>
-
-    </div>
-
-    <div className="mt-16 max-w-4xl mx-auto">
-      <p className="text-xl leading-relaxed font-medium">
-        At ShoLuc Education, tutoring is not transactional — it is transformational.
-        We partner with families, schools, and organisations to produce
-        sustained academic excellence.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-      {/* SESSION TYPES */}
-      <section className="py-20 px-6 text-center">
-        <h2 className="text-4xl font-bold mb-12">Academic Session Types</h2>
-        <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto text-lg">
-          <div className="border border-gray-600 p-6 rounded-xl">
-            <h3 className="text-2xl font-bold text-[#C6A34E] mb-3">
-              One-on-One Online
-            </h3>
-            <p>Personalised nationwide virtual tutoring.</p>
-          </div>
-          <div className="border border-gray-600 p-6 rounded-xl">
-            <h3 className="text-2xl font-bold text-[#C6A34E] mb-3">
-              Small Group Online (2–5)
-            </h3>
-            <p>Collaborative structured digital learning.</p>
-          </div>
-          <div className="border border-gray-600 p-6 rounded-xl">
-            <h3 className="text-2xl font-bold text-[#C6A34E] mb-3">
-              In-Person One-on-One
-            </h3>
-            <p>Premium private tutoring at the student’s home.</p>
-          </div>
-          <div className="border border-gray-600 p-6 rounded-xl">
-            <h3 className="text-2xl font-bold text-[#C6A34E] mb-3">
-              Small Group In-Person
-            </h3>
-            <p>Focused group sessions for measurable progress.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* SUBJECTS DISPLAY */}
-      <section className="bg-[#111C2A] py-20 px-6 text-center">
-        <h2 className="text-4xl font-bold mb-12">Subjects Offered</h2>
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {subjects.map((subject) => (
-            <div key={subject} className="border border-gray-600 p-4 rounded-lg">
-              {subject}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* TESTIMONIALS */}
-<section className="bg-[#111C2A] py-24 px-6 text-white">
-  <div className="max-w-6xl mx-auto text-center">
-
-    <h2 className="text-4xl md:text-5xl font-bold mb-16">
-      What Parents & Schools Say
-    </h2>
-
-    <div className="grid md:grid-cols-2 gap-10">
-
-      <div className="bg-[#0B1C2D] p-8 rounded-2xl shadow-lg border border-gray-700">
-        <p className="italic mb-4">
-          “ShoLuc Education transformed my son’s approach to Mathematics.
-          His confidence improved dramatically and his marks followed.”
-        </p>
-        <p className="font-semibold text-[#C6A34E]">
-          — Parent, Grade 11 Student
-        </p>
-      </div>
-
-      <div className="bg-[#0B1C2D] p-8 rounded-2xl shadow-lg border border-gray-700">
-        <p className="italic mb-4">
-          “The structured exam preparation workshop delivered measurable
-          results across our Grade 12 cohort.”
-        </p>
-        <p className="font-semibold text-[#C6A34E]">
-          — High School Principal
-        </p>
-      </div>
-
-      <div className="bg-[#0B1C2D] p-8 rounded-2xl shadow-lg border border-gray-700">
-        <p className="italic mb-4">
-          “Professional, organised, and academically rigorous.
-          We highly recommend ShoLuc Education.”
-        </p>
-        <p className="font-semibold text-[#C6A34E]">
-          — HOD, Sciences Department
-        </p>
-      </div>
-
-      <div className="bg-[#0B1C2D] p-8 rounded-2xl shadow-lg border border-gray-700">
-        <p className="italic mb-4">
-          “Our learners responded exceptionally well to the intervention
-          programme. The improvement was evident within weeks.”
-        </p>
-        <p className="font-semibold text-[#C6A34E]">
-          — NGO Programme Coordinator
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
       {/* QUOTATION FORM */}
       <section id="quotation" className="bg-[#EAF2FF] py-24 px-6 text-[#0B1C2D]">
         <h2 className="text-4xl font-extrabold text-center mb-12">
@@ -308,6 +124,7 @@ Notes: ${formData.get("notes") || "None"}
 
         <form onSubmit={handleSubmit} className="max-w-3xl mx-auto space-y-6">
 
+          {/* Applicant Type */}
           <div>
             <label className="font-bold block mb-2">Applicant Type</label>
             <select
@@ -324,42 +141,38 @@ Notes: ${formData.get("notes") || "None"}
             </select>
           </div>
 
+          {/* Name */}
           <div>
             <label className="font-bold block mb-2">Full Name</label>
             <input name="name" required className="w-full p-3 rounded border" />
           </div>
 
+          {/* Contact */}
           <div>
             <label className="font-bold block mb-2">Contact Number</label>
             <input name="contact" required className="w-full p-3 rounded border" />
           </div>
 
+          {/* Email */}
           <div>
             <label className="font-bold block mb-2">Email Address</label>
             <input type="email" name="email" required className="w-full p-3 rounded border" />
           </div>
 
-          {(applicantType === "School" ||
-            applicantType === "NPO" ||
-            applicantType === "NGO") && (
-            <>
-              <div>
-                <label className="font-bold block mb-2">Organisation Name</label>
-                <input name="organisation" required className="w-full p-3 rounded border" />
-              </div>
-              <div>
-                <label className="font-bold block mb-2">Role</label>
-                <select name="role" required className="w-full p-3 rounded border">
-                  <option value="">Select</option>
-                  <option>Principal</option>
-                  <option>HOD</option>
-                  <option>Teacher</option>
-                  <option>Programme Coordinator</option>
-                </select>
-              </div>
-            </>
-          )}
+          {/* Grade Multi-Select */}
+          <div>
+            <label className="font-bold block mb-2">Grade(s) Required</label>
+            <div className="grid md:grid-cols-3 gap-2">
+              {gradesList.map((grade) => (
+                <label key={grade} className="flex items-center space-x-2">
+                  <input type="checkbox" name="grades" value={grade} />
+                  <span>{grade}</span>
+                </label>
+              ))}
+            </div>
+          </div>
 
+          {/* Subjects Multi-Select */}
           <div>
             <label className="font-bold block mb-2">Subjects Required</label>
             <div className="grid md:grid-cols-2 gap-2">
@@ -372,6 +185,7 @@ Notes: ${formData.get("notes") || "None"}
             </div>
           </div>
 
+          {/* Session Type */}
           <div>
             <label className="font-bold block mb-2">Session Type</label>
             <select name="session" required className="w-full p-3 rounded border">
@@ -384,6 +198,7 @@ Notes: ${formData.get("notes") || "None"}
             </select>
           </div>
 
+          {/* Frequency */}
           <div>
             <label className="font-bold block mb-2">Frequency</label>
             <select name="frequency" required className="w-full p-3 rounded border">
@@ -395,6 +210,7 @@ Notes: ${formData.get("notes") || "None"}
             </select>
           </div>
 
+          {/* Notes */}
           <div>
             <label className="font-bold block mb-2">Additional Notes</label>
             <textarea name="notes" className="w-full p-3 rounded border" />

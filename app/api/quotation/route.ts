@@ -20,7 +20,7 @@ export async function POST(req: Request) {
   <p><strong>Email Address:</strong> ${data.email}</p>
   <p><strong>Organisation:</strong> ${data.organisation || "N/A"}</p>
   <p><strong>Role:</strong> ${data.role || "N/A"}</p>
-  <p><strong>Grade:</strong> ${data.grade}</p>
+  <p><strong>Grades:</strong> ${data.grades}</p>
   <p><strong>Subjects:</strong> ${data.subjects}</p>
   <p><strong>Session Type:</strong> ${data.session}</p>
   <p><strong>Frequency:</strong> ${data.frequency}</p>
