@@ -30,7 +30,7 @@ export default function Home() {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    const selectedSubjects = formData.getAll("subjects").join(", ");
+    const selectedSubjects = formData.getAll("subjects");
 
     const data = {
       applicant: formData.get("applicant"),
@@ -42,7 +42,7 @@ export default function Home() {
       grade: formData.get("grade"),
       session: formData.get("session"),
       frequency: formData.get("frequency"),
-      subjects: selectedSubjects,
+      subjects: selectedSubjects.join(", "),
       notes: formData.get("notes"),
     };
 
@@ -96,7 +96,6 @@ Notes: ${formData.get("notes") || "None"}
           Nationwide Online Excellence. Institutional Partnerships.
         </p>
 
-        {/* CTA BUTTON */}
         <a
           href="#quotation"
           className="bg-[#C6A34E] text-black px-8 py-4 rounded-xl font-semibold hover:bg-[#b8923f] transition"
@@ -136,7 +135,7 @@ Notes: ${formData.get("notes") || "None"}
         </div>
       </section>
 
-      {/* SUBJECTS */}
+      {/* SUBJECTS DISPLAY */}
       <section className="bg-[#111C2A] py-20 px-6 text-center">
         <h2 className="text-4xl font-bold mb-12">Subjects Offered</h2>
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -184,7 +183,7 @@ Notes: ${formData.get("notes") || "None"}
 
           <div>
             <label className="font-bold block mb-2">Email Address</label>
-            <input name="email" type="email" required className="w-full p-3 rounded border" />
+            <input type="email" name="email" required className="w-full p-3 rounded border" />
           </div>
 
           {(applicantType === "School" ||
@@ -195,7 +194,6 @@ Notes: ${formData.get("notes") || "None"}
                 <label className="font-bold block mb-2">Organisation Name</label>
                 <input name="organisation" required className="w-full p-3 rounded border" />
               </div>
-
               <div>
                 <label className="font-bold block mb-2">Role</label>
                 <select name="role" required className="w-full p-3 rounded border">
@@ -208,19 +206,6 @@ Notes: ${formData.get("notes") || "None"}
               </div>
             </>
           )}
-
-          <div>
-            <label className="font-bold block mb-2">Grade</label>
-            <select name="grade" required className="w-full p-3 rounded border">
-              <option value="">Select</option>
-              <option>Grade 8</option>
-              <option>Grade 9</option>
-              <option>Grade 10</option>
-              <option>Grade 11</option>
-              <option>Grade 12</option>
-              <option>Mixed Grades / Large Group</option>
-            </select>
-          </div>
 
           <div>
             <label className="font-bold block mb-2">Subjects Required</label>
