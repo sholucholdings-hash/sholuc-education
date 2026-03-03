@@ -159,31 +159,62 @@ Notes: ${formData.get("notes") || "None"}
             <input type="email" name="email" required className="w-full p-3 rounded border" />
           </div>
 
-          {/* Grade Multi-Select */}
-          <div>
-            <label className="font-bold block mb-2">Grade(s) Required</label>
-            <div className="grid md:grid-cols-3 gap-2">
-              {gradesList.map((grade) => (
-                <label key={grade} className="flex items-center space-x-2">
-                  <input type="checkbox" name="grades" value={grade} />
-                  <span>{grade}</span>
-                </label>
-              ))}
-            </div>
-          </div>
+          {/* Grade Multi-Select (Premium Cards) */}
+<div>
+  <label className="font-bold block mb-4 text-lg">
+    Grade(s) Required
+  </label>
 
-          {/* Subjects Multi-Select */}
-          <div>
-            <label className="font-bold block mb-2">Subjects Required</label>
-            <div className="grid md:grid-cols-2 gap-2">
-              {subjects.map((subject) => (
-                <label key={subject} className="flex items-center space-x-2">
-                  <input type="checkbox" name="subjects" value={subject} />
-                  <span>{subject}</span>
-                </label>
-              ))}
-            </div>
-          </div>
+  <div className="grid md:grid-cols-3 gap-4">
+    {gradesList.map((grade) => (
+      <label key={grade} className="cursor-pointer">
+        <input
+          type="checkbox"
+          name="grades"
+          value={grade}
+          className="peer hidden"
+        />
+        <div className="p-4 rounded-xl border-2 border-gray-300 
+                        peer-checked:border-[#C6A34E] 
+                        peer-checked:bg-[#0B1C2D] 
+                        peer-checked:text-white 
+                        hover:border-[#C6A34E] 
+                        transition-all duration-200">
+          {grade}
+        </div>
+      </label>
+    ))}
+  </div>
+</div>
+
+
+{/* Subjects Multi-Select (Premium Cards) */}
+<div>
+  <label className="font-bold block mb-4 text-lg">
+    Subjects Required
+  </label>
+
+  <div className="grid md:grid-cols-2 gap-4">
+    {subjects.map((subject) => (
+      <label key={subject} className="cursor-pointer">
+        <input
+          type="checkbox"
+          name="subjects"
+          value={subject}
+          className="peer hidden"
+        />
+        <div className="p-4 rounded-xl border-2 border-gray-300 
+                        peer-checked:border-[#C6A34E] 
+                        peer-checked:bg-[#0B1C2D] 
+                        peer-checked:text-white 
+                        hover:border-[#C6A34E] 
+                        transition-all duration-200">
+          {subject}
+        </div>
+      </label>
+    ))}
+  </div>
+</div>
 
           {/* Session Type */}
           <div>
