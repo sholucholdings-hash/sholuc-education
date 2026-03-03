@@ -515,25 +515,6 @@ Additional Notes: ${formData.get("notes") || "None"}
   </form>
 </section>
 
-          {/* PREMIUM GRADE CARDS */}
-          <div>
-            <label className="font-bold block mb-4">Grade(s)</label>
-            <div className="grid md:grid-cols-3 gap-4">
-              {gradesList.map((grade) => (
-                <label key={grade} className="cursor-pointer">
-                  <input type="checkbox" name="grades" value={grade} className="peer hidden"/>
-                  <div className="p-4 rounded-xl border-2 border-gray-300
-                                  peer-checked:border-[#C6A34E]
-                                  peer-checked:bg-[#0B1C2D]
-                                  peer-checked:text-white
-                                  hover:border-[#C6A34E]
-                                  transition">
-                    {grade}
-                  </div>
-                </label>
-              ))}
-            </div>
-          </div>
 
       <footer className="bg-black py-10 text-center text-sm">
         © {new Date().getFullYear()} ShoLuc Education
