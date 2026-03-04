@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-
+import React from "react";
 export const metadata = {
   title: "ShoLuc Education | Premium Tutoring for Grades 8–12 | South Africa",
   description: "ShoLuc Education provides elite academic tutoring for Grades 8–12...",
