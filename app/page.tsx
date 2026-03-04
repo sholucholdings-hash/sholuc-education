@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 export default function Home() {
+  const [flippedCard, setFlippedCard] = useState<number | null>(null);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [applicantType, setApplicantType] = useState("");
@@ -20,7 +21,8 @@ export default function Home() {
     "Economics",
     "History",
     "Information Technology (IT)",
-    "Computer Applications Technology (CAT)"
+    "Computer Applications Technology (CAT)",
+    "Engineering Graphics & Design (EGD)",
   ];
 
   const gradesList = [
@@ -262,15 +264,40 @@ Additional Notes: ${formData.get("notes") || "None"}
 
       {/* SUBJECTS DISPLAY */}
       <section className="bg-[#111C2A] py-20 px-6 text-center">
-        <h2 className="text-4xl font-bold mb-12">Subjects Offered</h2>
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {subjects.map((subject) => (
-            <div key={subject} className="border border-gray-600 p-4 rounded-lg">
-              {subject}
-            </div>
-          ))}
-        </div>
-      </section>
+<h2 className="text-4xl font-bold mb-12">Subjects Offered</h2>
+
+<div className="overflow-x-auto">
+<div className="flex gap-6 px-4">
+
+{[
+"Mathematics",
+"Physical Sciences",
+"Life Sciences",
+"Accounting",
+"English",
+"Afrikaans",
+"IsiZulu",
+"Geography",
+"Business Studies",
+"Economics",
+"History",
+"Information Technology (IT)",
+"Computer Applications Technology (CAT)",
+"Engineering Graphics & Design (EGD)"
+].map((subject,i)=>(
+
+<div
+key={i}
+className="min-w-[220px] border border-gray-600 p-5 rounded-lg"
+>
+{subject}
+</div>
+
+))}
+
+</div>
+</div>
+</section>
 
       {/* TESTIMONIALS – AUTHORITY & RESULTS */}
 <section className="bg-[#111C2A] py-28 px-6 text-white">
@@ -281,76 +308,192 @@ Additional Notes: ${formData.get("notes") || "None"}
     </h2>
 
     {/* APHIWE FEATURED TESTIMONIAL */}
-    <div className="bg-[#0B1C2D] p-12 rounded-3xl shadow-2xl border-2 border-[#C6A34E] mb-20">
-      <p className="text-2xl font-semibold text-[#C6A34E] mb-6">
-        Aphiwokuhle Khuzwayo  
-        <span className="block text-lg text-gray-300">
-          Grade 10–12 | Former Southdowns College | University of Pretoria
-        </span>
-      </p>
+    <div
+onClick={() => setFlippedCard(flippedCard === 0 ? null : 0)}
+className="cursor-pointer perspective"
+>
 
-      <p className="text-lg leading-relaxed mb-6">
-        “A tutor teaches content. A mentor builds a person.  
-        Mr Shongwe did both.”
-      </p>
+<div
+className={`relative w-full h-[320px] transition-transform duration-700 transform-style ${
+flippedCard === 0 ? "rotate-y-180" : ""
+}`}
+>
 
-      <p className="text-lg leading-relaxed mb-6">
-        Under his guidance, Physics became the subject in which I achieved my first-ever 80%.
-        But more than the mark, he refined my mentality. He sharpened my discipline,
-        reshaped how I approached problems, and strengthened my belief in my own potential.
-      </p>
+{/* FRONT */}
 
-      <p className="text-lg leading-relaxed mb-6">
-        He followed up after every test, held me accountable, and refused to let me settle
-        for less than excellence. His mentorship extended beyond Physics — it shaped how
-        I approach life and academic challenges today.
-      </p>
+<div className="absolute inset-0 bg-[#0B1C2D] border-2 border-[#C6A34E] p-8 rounded-2xl backface-hidden">
 
-      <p className="text-lg font-semibold">
-        “He did not simply teach me Physics.  
-        He strengthened my mindset.”
-      </p>
-    </div>
+<p className="text-xl font-semibold text-[#C6A34E] mb-4">
+Aphiwokuhle Khuzwayo
+</p>
+
+<p className="text-gray-300 mb-4">
+Grade 10–12 | University of Pretoria
+</p>
+
+<p>
+“A tutor teaches content. A mentor builds a person. Mr Shongwe did both.”
+</p>
+
+<p className="text-gray-400 mt-4 text-sm">
+Click to read full testimony
+</p>
+
+</div>
+
+{/* BACK */}
+
+<div className="absolute inset-0 bg-[#0B1C2D] border-2 border-[#C6A34E] p-8 rounded-2xl rotate-y-180 backface-hidden">
+
+<p className="text-xl font-semibold text-[#C6A34E] mb-4">
+Full Testimony
+</p>
+
+<p className="text-sm leading-relaxed">
+Under his guidance Physics became the subject in which I achieved my first-ever 80%. But more importantly he refined my mentality, sharpened my discipline and strengthened my belief in my potential. His mentorship shaped how I approach challenges and pursue excellence today.
+</p>
+
+</div>
+
+</div>
+</div>
 
     {/* GRID TESTIMONIALS */}
     <div className="grid md:grid-cols-2 gap-12">
 
-      <div className="bg-[#0B1C2D] p-10 rounded-2xl shadow-xl border-2 border-[#C6A34E]">
-        <p className="text-xl font-semibold text-[#C6A34E] mb-4">
-          Lilitha — Grade 10–12
-        </p>
-        <p className="leading-relaxed">
-          “SHOLUC Education gave me the best experience. Online lessons twice a week
-          and close contact with my teacher made all the difference. Mr Shongwe pushed
-          me beyond what I believed I could achieve and built my self-confidence.
-          He thrives for nothing but greatness.”
-        </p>
-      </div>
+      <div
+onClick={() => setFlippedCard(flippedCard === 1 ? null : 1)}
+className="cursor-pointer perspective"
+>
 
-      <div className="bg-[#0B1C2D] p-10 rounded-2xl shadow-xl border-2 border-[#C6A34E]">
-        <p className="text-xl font-semibold text-[#C6A34E] mb-4">
-          Oratile — Grade 11–12
-        </p>
-        <p className="leading-relaxed">
-          “SHOLUC Education was truly a blessing to my academics.
-          They strengthened my understanding of Physics, Mathematics,
-          and English writing. Their guidance helped me improve my confidence
-          and ultimately gain university admission for the degree I’ve always wanted.”
-        </p>
-      </div>
+<div
+className={`relative w-full h-[320px] transition-transform duration-700 transform-style ${
+flippedCard === 1 ? "rotate-y-180" : ""
+}`}
+>
 
-      <div className="bg-[#0B1C2D] p-10 rounded-2xl shadow-xl border-2 border-[#C6A34E] md:col-span-2">
-        <p className="text-xl font-semibold text-[#C6A34E] mb-4">
-          Principal — UJA School
-        </p>
-        <p className="leading-relaxed">
-          “ShoLuc Education has demonstrated exceptional professionalism,
-          structure, and measurable academic impact. Their examination preparation
-          workshops were delivered with clarity, discipline, and strategic insight.
-          We observed improved learner confidence and stronger performance across
-          targeted subjects. We regard ShoLuc Education as a credible academic partner.”
-        </p>
-      </div>
+<div className="absolute inset-0 bg-[#0B1C2D] border-2 border-[#C6A34E] p-8 rounded-2xl backface-hidden">
+
+<p className="text-xl font-semibold text-[#C6A34E] mb-4">
+Lilitha
+</p>
+
+<p className="text-gray-300 mb-4">
+Grade 10–12
+</p>
+
+<p>
+“SHOLUC Education gave me the best experience.”
+</p>
+
+<p className="text-gray-400 mt-4 text-sm">
+Click to read full testimony
+</p>
+
+</div>
+
+<div className="absolute inset-0 bg-[#0B1C2D] border-2 border-[#C6A34E] p-8 rounded-2xl rotate-y-180 backface-hidden">
+
+<p className="text-xl font-semibold text-[#C6A34E] mb-4">
+Full Testimony
+</p>
+
+<p className="text-sm leading-relaxed">
+Online lessons twice a week and constant support helped me understand concepts I never believed I could. Mr Shongwe pushed me toward excellence and helped grow my confidence.
+</p>
+
+</div>
+
+</div>
+</div>
+
+      <div
+onClick={() => setFlippedCard(flippedCard === 2 ? null : 2)}
+className="cursor-pointer perspective"
+>
+
+<div
+className={`relative w-full h-[320px] transition-transform duration-700 transform-style ${
+flippedCard === 2 ? "rotate-y-180" : ""
+}`}
+>
+
+<div className="absolute inset-0 bg-[#0B1C2D] border-2 border-[#C6A34E] p-8 rounded-2xl backface-hidden">
+
+<p className="text-xl font-semibold text-[#C6A34E] mb-4">
+Oratile
+</p>
+
+<p className="text-gray-300 mb-4">
+Grade 11–12
+</p>
+
+<p>
+“ShoLuc Education was truly a blessing to my academics.”
+</p>
+
+<p className="text-gray-400 mt-4 text-sm">
+Click to read full testimony
+</p>
+
+</div>
+
+<div className="absolute inset-0 bg-[#0B1C2D] border-2 border-[#C6A34E] p-8 rounded-2xl rotate-y-180 backface-hidden">
+
+<p className="text-xl font-semibold text-[#C6A34E] mb-4">
+Full Testimony
+</p>
+
+<p className="text-sm leading-relaxed">
+They strengthened my understanding of Physics, Mathematics and English writing while building my confidence. Their support ultimately helped me gain university admission.
+</p>
+
+</div>
+
+</div>
+</div>
+
+      <div
+onClick={() => setFlippedCard(flippedCard === 3 ? null : 3)}
+className="cursor-pointer perspective md:col-span-2"
+>
+
+<div
+className={`relative w-full h-[320px] transition-transform duration-700 transform-style ${
+flippedCard === 3 ? "rotate-y-180" : ""
+}`}
+>
+
+<div className="absolute inset-0 bg-[#0B1C2D] border-2 border-[#C6A34E] p-8 rounded-2xl backface-hidden">
+
+<p className="text-xl font-semibold text-[#C6A34E] mb-4">
+UJA School Principal
+</p>
+
+<p>
+“ShoLuc Education demonstrates exceptional professionalism.”
+</p>
+
+<p className="text-gray-400 mt-4 text-sm">
+Click to read full testimony
+</p>
+
+</div>
+
+<div className="absolute inset-0 bg-[#0B1C2D] border-2 border-[#C6A34E] p-8 rounded-2xl rotate-y-180 backface-hidden">
+
+<p className="text-xl font-semibold text-[#C6A34E] mb-4">
+Full Testimony
+</p>
+
+<p className="text-sm leading-relaxed">
+ShoLuc Education delivers structured and disciplined academic workshops. We observed improved learner confidence and stronger academic performance across targeted subjects.
+</p>
+
+</div>
+
+</div>
+</div>
 
     </div>
 
