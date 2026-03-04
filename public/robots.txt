@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sholuceducation.co.za/sitemap.xml
