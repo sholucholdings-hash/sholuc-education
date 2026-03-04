@@ -38,6 +38,29 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased bg-[#0B1C2D]">
+        <nav className="bg-[#0B1C2D] text-white px-6 py-4 flex justify-between items-center border-b border-gray-700">
+
+<div className="font-bold text-xl">
+ShoLuc Education
+</div>
+
+<div className="flex gap-6 text-sm">
+
+<a href="/">Home</a>
+
+<a href="/subjects">Subjects</a>
+
+<a href="/programmes">Programmes</a>
+
+<a href="/testimonials">Results</a>
+
+<a href="/resources">Student Resources</a>
+
+<a href="/contact">Contact</a>
+
+</div>
+
+</nav>
         {children}
       </body>
     </html>
