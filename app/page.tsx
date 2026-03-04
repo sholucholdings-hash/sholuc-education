@@ -343,7 +343,7 @@ Click to read full testimony
 
 {/* BACK */}
 
-<div className="absolute inset-0 bg-[#0B1C2D] border-2 border-[#C6A34E] p-8 rounded-2xl rotate-y-180 backface-hidden">
+<div className="absolute inset-0 bg-[#0B1C2D] border-2 border-[#C6A34E] p-8 rounded-2xl flip-back backface-hidden">
 
 <p className="text-xl font-semibold text-[#C6A34E] mb-4">
 Full Testimony
@@ -392,7 +392,7 @@ Click to read full testimony
 
 </div>
 
-<div className="absolute inset-0 bg-[#0B1C2D] border-2 border-[#C6A34E] p-8 rounded-2xl rotate-y-180 backface-hidden">
+<div className="absolute inset-0 bg-[#0B1C2D] border-2 border-[#C6A34E] p-8 rounded-2xl flip-back backface-hidden">
 
 <p className="text-xl font-semibold text-[#C6A34E] mb-4">
 Full Testimony
@@ -438,7 +438,7 @@ Click to read full testimony
 
 </div>
 
-<div className="absolute inset-0 bg-[#0B1C2D] border-2 border-[#C6A34E] p-8 rounded-2xl rotate-y-180 backface-hidden">
+<div className="absolute inset-0 bg-[#0B1C2D] border-2 border-[#C6A34E] p-8 rounded-2xl flip-back backface-hidden">
 
 <p className="text-xl font-semibold text-[#C6A34E] mb-4">
 Full Testimony
@@ -480,7 +480,7 @@ Click to read full testimony
 
 </div>
 
-<div className="absolute inset-0 bg-[#0B1C2D] border-2 border-[#C6A34E] p-8 rounded-2xl rotate-y-180 backface-hidden">
+<div className="absolute inset-0 bg-[#0B1C2D] border-2 border-[#C6A34E] p-8 rounded-2xl flip-back backface-hidden">
 
 <p className="text-xl font-semibold text-[#C6A34E] mb-4">
 Full Testimony
